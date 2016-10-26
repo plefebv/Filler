@@ -6,7 +6,7 @@
 #    By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/04 11:19:04 by plefebvr          #+#    #+#              #
-#    Updated: 2016/10/26 12:27:15 by plefebvr         ###   ########.fr        #
+#    Updated: 2016/10/26 12:48:37 by plefebvr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,6 @@ CFLAGS	= -Wall -Wextra -Werror #-g3 -fsanitize=address
 
 FILES	= 	main.c \
 			utils.c \
-			libft.c \
 			malloc.c \
 			parts.c \
 			algo.c \
