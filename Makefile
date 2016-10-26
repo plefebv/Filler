@@ -6,7 +6,7 @@
 #    By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/04 11:19:04 by plefebvr          #+#    #+#              #
-#    Updated: 2016/10/17 19:42:07 by plefebvr         ###   ########.fr        #
+#    Updated: 2016/10/26 12:27:15 by plefebvr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,14 @@ FILES	= 	main.c \
 			libft.c \
 			malloc.c \
 			parts.c \
-			algo.c
+			algo.c \
+			direction.c \
+			algo_v.c
 
 NORMAL = grab.c
 
-COLOR =	grab_color.c
+COLOR =	grab_color.c \
+		color.c
 
 LIB	= -L libft -lft
 

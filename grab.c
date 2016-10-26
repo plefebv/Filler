@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/03 16:27:10 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/25 17:43:08 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/26 12:20:21 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void				grab_piece_size(t_env *info, char *str)
 {
-		char		**tab;
+	char		**tab;
 
 	info->step = 4;
 	tab = NULL;
@@ -34,7 +34,8 @@ void				grab_map_size(t_env *info, char *str)
 	info->step = 2;
 }
 
-void				grab_real_size_piece(t_env *info, int min_y, int max_y, int min_x)
+void				grab_real_size_piece(t_env *info, int min_y, \
+		int max_y, int min_x)
 {
 	int		max_x;
 	int		i;
@@ -42,32 +43,24 @@ void				grab_real_size_piece(t_env *info, int min_y, int max_y, int min_x)
 	max_x = 0;
 	i = 0;
 	min_y = info->piece_size_y;
-	min_x = info->piece_size_x;	
+	min_x = info->piece_size_x;
 	while (i < info->nbr_parts)
 	{
 		if (info->parts[i][0] > max_y)
-		{
 			max_y = info->parts[i][0];
-		}
 		if (info->parts[i][1] > max_x)
-		{
 			max_x = info->parts[i][1];
-		}
 		if (info->parts[i][0] < min_y)
-		{
 			min_y = info->parts[i][0];
-		}
 		if (info->parts[i][1] < min_x)
-		{
 			min_x = info->parts[i][1];
-			}
 		i++;
 	}
 	info->piece_real_y = max_y - min_y + 1;
 	info->piece_real_x = max_x - min_x + 1;
 }
 
-void					grab_piece(t_env *info, char *str)
+void				grab_piece(t_env *info, char *str)
 {
 	int		x;
 	int		y;
@@ -91,7 +84,7 @@ void					grab_piece(t_env *info, char *str)
 	info->step = 5;
 }
 
-void					grab_map(t_env *info, char *str)
+void				grab_map(t_env *info, char *str)
 {
 	int		x;
 	int		y;
@@ -113,19 +106,4 @@ void					grab_map(t_env *info, char *str)
 			info->map[y][x++] = str[i++];
 		y++;
 	}
-}
-
-void				identify_players(t_env *info, char *str)
-{
-	if (ft_strinstr(str, "$$$ exec p1"))
-	{
-		info->ltr_player = 'O';
-		info->ltr_ennemy = 'X';
-	}
-	else if (ft_strinstr(str, "$$$ exec p2"))
-	{
-		info->ltr_player = 'X';
-		info->ltr_ennemy = 'O';
-	}
-	info->step = 1;
 }

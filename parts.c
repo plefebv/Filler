@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/07 15:01:24 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/25 17:03:53 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/26 11:38:56 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void				take_parts(t_env *info)
 		}
 		y++;
 	}
-	grab_real_size_piece(info, 0, 0 ,0);
+	grab_real_size_piece(info, 0, 0, 0);
 	info->step = 7;
 }
 

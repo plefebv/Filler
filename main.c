@@ -6,42 +6,57 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/30 17:13:43 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/25 17:18:13 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/26 12:19:53 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-static void			init_game(t_env *info, char *str)
+static void				identify_players(t_env *info, char *str)
 {
-		if (info->step == 0 && ft_strinstr(str, "$$$ exec"))
-			identify_players(info, str);
-		if (info->step == 1 && ft_strinstr(str, "Plateau"))
-			grab_map_size(info, str);
-		if (info->step == 2)
-			grab_map(info, str);
-		if (info->step == 3 && ft_strinstr(str, "Piece"))
-		{
-			grab_piece_size(info, str);
-			grab_piece(info, str);
-		}
+	if (ft_strinstr(str, "$$$ exec p1"))
+	{
+		info->ltr_player = 'O';
+		info->ltr_ennemy = 'X';
+	}
+	else if (ft_strinstr(str, "$$$ exec p2"))
+	{
+		info->ltr_player = 'X';
+		info->ltr_ennemy = 'O';
+	}
+	info->step = 1;
 }
 
-static void			work_filler(t_env *info, char *str)
+static void				init_game(t_env *info, char *str)
+{
+	if (info->step == 0 && ft_strinstr(str, "$$$ exec"))
+		identify_players(info, str);
+	if (info->step == 1 && ft_strinstr(str, "Plateau"))
+		grab_map_size(info, str);
+	if (info->step == 2)
+		grab_map(info, str);
+	if (info->step == 3 && ft_strinstr(str, "Piece"))
+	{
+		grab_piece_size(info, str);
+		grab_piece(info, str);
+	}
+}
+
+static void				work_filler(t_env *info, char *str)
 {
 	t_pp			pp;
 
 	init_game(info, str);
-	info->step == 5 ? take_position(info, &pp) : 0;
+	info->step == 5 ? take_position(info, &pp, -1, -1) : 0;
 	info->step == 6 ? take_parts(info) : 0;
 	info->step == 7 ? take_direction(info, &pp) : 0;
 	info->step == 8 ? choose_algo(info) : 0;
 	info->step == 42 ? free_info(info) : 0;
 }
 
-int					main(void)
+int						main(void)
 {
-	char 			*str;
+	char			*str;
 	t_env			info;
 
 	str = NULL;

@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/01 19:34:36 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/25 17:32:14 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/26 12:39:48 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,6 @@ typedef struct			s_env
 
 typedef struct			s_pp
 {
-	int					pf_y;
-	int					pf_x;
-
-	int					ef_y;
-	int					ef_x;
-
-	int					pl_y;
-	int					pl_x;
-
-	int					el_y;
-	int					el_x;
-
 	int					emax_y;
 	int					emin_y;
 	int					emax_x;
@@ -86,8 +74,8 @@ void					grab_piece_size(t_env *info, char *str);
 void					grab_piece(t_env *info, char *str);
 void					grab_map_size(t_env *info, char *str);
 void					grab_map(t_env *info, char *str);
-void					identify_players(t_env *info, char *str);
-void					grab_real_size_piece(t_env *info, int min_y, int max_y, int min_x);
+void					grab_real_size_piece(t_env *info, int min_y, \
+						int max_y, int min_x);
 /*
 ** Memory Functions
 */
@@ -101,13 +89,14 @@ void					free_info(t_env *info);
 */
 
 void					ft_putstr_color_fd(char *str, int fd);
-void					take_position(t_env *info, t_pp *pp);
+void					take_position(t_env *info, t_pp *pp, int i, int x);
 void					take_direction(t_env *info, t_pp *pp);
+void					take_global_position(t_env *info, t_pp *pp);
+void					clearscreen(void);
 
 /*
 ** Parts Functions
 */
-
 
 void					take_parts(t_env *info);
 int						test_piece(t_env *info, int add_y, int add_x);
@@ -117,5 +106,6 @@ int						test_piece(t_env *info, int add_y, int add_x);
 */
 
 void					choose_algo(t_env *info);
+void					algo_v(t_env *info);
 
 #endif
