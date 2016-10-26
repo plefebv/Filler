@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/01 19:34:36 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/26 12:39:48 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/26 12:56:46 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 # define FILLER_H
 
 # include "libft/includes/libft.h"
-
-# define MAP(y, x) 		info->map[y][x]
-# define PIECE(y, x)	info->piece[y][x]
 
 typedef struct			s_env
 {
