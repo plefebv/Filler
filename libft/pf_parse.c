@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 18:04:25 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/01 18:53:52 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/28 13:29:49 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ static void			pf_put_flag(const char *fmt, int *i, t_info *info)
 		info->flags = NULL;
 }
 
-static void			pf_put_mfw(const char *fmt, int *i, t_info *info, va_list ap)
+static void			pf_put_mfw(const char *fmt, int *i, \
+					t_info *info, va_list ap)
 {
 	int		tmp;
 	char	*str;
@@ -55,7 +56,8 @@ static void			pf_put_mfw(const char *fmt, int *i, t_info *info, va_list ap)
 	pf_put_mfw2(info);
 }
 
-static void			pf_put_precision(const char *fmt, int *i, t_info *info, va_list ap)
+static void			pf_put_precision(const char *fmt, int *i, \
+					t_info *info, va_list ap)
 {
 	int		tmp;
 	char	*str;
@@ -108,7 +110,8 @@ static void			pf_put_length(const char *fmt, int *i, t_info *info)
 		(*i)++;
 }
 
-void				pf_parse_arg(const char *fmt, int *i, t_info *info, va_list ap)
+void				pf_parse_arg(const char *fmt, int *i, \
+					t_info *info, va_list ap)
 {
 	pf_put_flag(fmt, i, info);
 	pf_put_mfw(fmt, i, info, ap);

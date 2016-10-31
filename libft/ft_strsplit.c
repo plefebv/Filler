@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 15:58:08 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/03/21 20:44:02 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/30 15:29:28 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int		l_wordcount(const char *s, char c)
 	return (j);
 }
 
-char			**ft_strsplit(char const *str, char c)
+char			**ft_strsplit(char const *str, char c, int *p)
 {
 	int		i;
 	char	**strback;
@@ -70,8 +70,8 @@ char			**ft_strsplit(char const *str, char c)
 				strback[word++] = ft_strw(&str[i], c);
 			while (str[i] != c && str[i] != '\0')
 				i++;
+			*p = word;
 		}
-		strback[word] = (char *)malloc(sizeof(char) * 1);
 		strback[word] = NULL;
 		return (strback);
 	}

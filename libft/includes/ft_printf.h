@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 00:48:33 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/01 18:57:49 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/28 13:26:54 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ char						*pf_strjoin_spe(char *str, t_info *info,\
 char						*pf_strjoin_c_null(char *s1, t_info *info,\
 		unsigned long long mfw);
 
-
 int							ft_printf(const char *fmt, ...);
 int							pf_isletter(char c);
 int							pf_print_list(t_info *info);
@@ -69,7 +68,6 @@ int							pf_nbrlen_str(char *s);
 void						pf_init_strct(t_info *info);
 void						pf_epur_fmt(t_info *info, const char *fmt, int *i);
 void						pf_put_in_lst(t_info *info, char *input);
-//void						pf_check_flag(const char *fmt, int *i, char *dest);
 void						pf_parse_arg(const char *fmt, int *i, t_info *info,\
 		va_list ap);
 void						pf_clean_info(t_info *info);

@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 15:16:17 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/01 18:54:05 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/28 13:30:33 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void			percentage(t_info *info, int *i, char c)
 		(*i)++;
 }
 
-static void				pf_special_letter2(t_info *info, char c)
+static void			pf_special_letter2(t_info *info, char c)
 {
 	if (c == 'S')
 	{
@@ -56,7 +56,7 @@ static void				pf_special_letter2(t_info *info, char c)
 	}
 }
 
-static void				pf_special_letter(t_info *info, char c)
+static void			pf_special_letter(t_info *info, char c)
 {
 	if (c == 'D')
 	{

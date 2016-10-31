@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/03 16:45:22 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/26 12:48:30 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/30 13:21:57 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void				take_global_position(t_env *info, t_pp *pp)
 
 static void			init_pp(t_env *info, t_pp *pp)
 {
+	info->free = 0;
 	pp->emax_y = 0;
 	pp->emin_y = info->map_size_y;
 	pp->emax_x = 0;
@@ -90,23 +91,23 @@ void				take_position(t_env *info, t_pp *pp, int i, int x)
 	info->step = 6;
 }
 
-int			ft_strinstr(const char *str1, const char *str2)
+int					ft_strinstr(const char *s1, const char *s2)
 {
 	int		i;
 	int		j;
 
 	i = 0;
-	j = 0;
-	while (str1[i])
+	if (s2[0] == '\0')
+		return (1);
+	while (s1[i])
 	{
 		j = 0;
-		while (str1[i] == str2[j])
+		while (s1[i + j] == s2[j])
 		{
 			j++;
-			i++;
+			if (s2[j] == '\0')
+				return (1);
 		}
-		if (!str2[j])
-			return (1);
 		i++;
 	}
 	return (0);

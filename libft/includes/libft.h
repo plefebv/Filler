@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 14:49:09 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/01 18:58:10 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/30 15:28:53 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 t_list				*ft_lstnew(void const *content, size_t content_size);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
-char				**ft_strsplit(char const *s, char c);
+char				**ft_strsplit(char const *s, char c, int *p);
 char				*ft_itoa(int n);
 int					ft_atoi(const char *str);
 char				*ft_strtrim(char const *s);

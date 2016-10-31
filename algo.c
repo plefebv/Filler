@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/10 05:07:36 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/26 12:26:50 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/27 18:01:50 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ static void			algo_ur_h(t_env *info)
 
 void				choose_algo(t_env *info)
 {
+	info->free = 0;
 	if (info->piece_info > 0)
 	{
 		if (info->direction_y == 1)

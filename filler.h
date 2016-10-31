@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/01 19:34:36 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/26 12:56:46 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/28 16:30:34 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ typedef struct			s_env
 
 	char				direction_x;
 	char				direction_y;
+
+	int					free;
+	int					first;
 }						t_env;
 
 typedef struct			s_pp
@@ -78,7 +81,7 @@ void					grab_real_size_piece(t_env *info, int min_y, \
 */
 
 char					**malloc_map(int y, int x);
-void					malloc_parts(t_env *info);
+int						**malloc_parts(t_env *info);
 void					free_info(t_env *info);
 
 /*

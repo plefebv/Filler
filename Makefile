@@ -6,7 +6,7 @@
 #    By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/04 11:19:04 by plefebvr          #+#    #+#              #
-#    Updated: 2016/10/26 12:48:37 by plefebvr         ###   ########.fr        #
+#    Updated: 2016/10/31 14:14:31 by plefebvr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,14 +39,14 @@ RESET = tput sgr 0
 
 $(NAME):
 	@make -C libft
-	@gcc $(CFLAGS) $(FILES) $(NORMAL) $(LIB) -o $(NAME)
+	@clang $(CFLAGS) $(FILES) $(NORMAL) $(LIB) -o $(NAME)
 	@$(CYN)
 	@echo " === Filler Compilation Done ===\n"
 	@$(RESET)
 
 color:
 	@make -C libft
-	@gcc $(CFLAGS) $(FILES) $(COLOR) $(LIB) -o $(NAME)
+	@clang $(CFLAGS) $(FILES) $(COLOR) $(LIB) -o $(NAME)
 	@$(CYN)
 	@echo " === Filler Color Compilation Done ===\n"
 	@$(RESET)

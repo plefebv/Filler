@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 11:46:45 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/26 12:00:06 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/27 18:00:20 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ static void			p3(t_env *info, t_pp *pp)
 
 void				take_direction(t_env *info, t_pp *pp)
 {
+	info->free = 0;
 	take_global_position(info, pp);
 	info->piece_real_y < info->piece_real_x ? info->piece_info = 1 : 0;
 	info->piece_real_y > info->piece_real_x ? info->piece_info = -1 : 0;

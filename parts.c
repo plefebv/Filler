@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/07 15:01:24 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/26 11:38:56 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/28 12:03:52 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ void				take_parts(t_env *info)
 	int		x;
 	int		part;
 
+	info->free = 0;
 	part = 0;
 	y = 0;
-	malloc_parts(info);
+	info->parts = malloc_parts(info);
 	while (y < info->piece_size_y)
 	{
 		x = 0;

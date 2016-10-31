@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/03 16:27:10 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/26 12:36:52 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/31 14:14:12 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,45 @@
 void					grab_piece_size(t_env *info, char *str)
 {
 	char		**tab;
+	int			p;
 
+	p = 0;
+	info->free = 0;
 	info->step = 4;
 	tab = NULL;
-	tab = ft_strsplit(str, ' ');
+	ft_putendl_fd(str, 2);
+	tab = ft_strsplit(str, ' ', &p);
+	if (p != 3)
+		return ;
+	ft_memdel((void **)&tab[0]);
 	info->piece_size_y = ft_atoi(tab[1]);
+	ft_memdel((void **)&tab[1]);
 	info->piece_size_x = ft_atoi(tab[2]);
+	ft_memdel((void **)&tab[2]);
+	free(*tab);
+	free(tab);
+	ft_strdel((char **)&str);
 }
 
 void					grab_map_size(t_env *info, char *str)
 {
 	char		**tab;
+	int			p;
 
+	p = 0;
+	info->free = 0;
 	tab = NULL;
-	tab = ft_strsplit(str, ' ');
+	tab = ft_strsplit(str, ' ', &p);
+	if (p != 3)
+		return ;
+	ft_memdel((void **)&tab[0]);
 	info->map_size_y = ft_atoi(tab[1]);
+	ft_memdel((void **)&tab[1]);
 	info->map_size_x = ft_atoi(tab[2]);
+	ft_memdel((void **)&tab[2]);
+	free(*tab);
+	free(tab);
+	info->first = 0;
 	info->step = 2;
 }
 
@@ -65,6 +88,7 @@ void					grab_piece(t_env *info, char *str)
 	int		x;
 	int		y;
 
+	info->free = 0;
 	x = 0;
 	y = 0;
 	info->nbr_parts = 0;
@@ -73,13 +97,14 @@ void					grab_piece(t_env *info, char *str)
 	{
 		x = 0;
 		get_next_line(0, &str);
-		ft_putendl_fd(str, 2);
+		ft_putstr_color_fd(str, 2);
 		while (x < info->piece_size_x)
 		{
 			info->piece[y][x] = str[x];
 			info->piece[y][x] == '*' ? info->nbr_parts++ : 0;
 			x++;
 		}
+		ft_memdel((void **)&str);
 		y++;
 	}
 	info->step = 5;
@@ -91,14 +116,16 @@ void					grab_map(t_env *info, char *str)
 	int		y;
 	int		i;
 
-	y = 0;
+	y = -1;
 	x = 0;
+	info->free = 0;
 	info->step = 3;
-	clearscreen();
 	info->map = malloc_map(info->map_size_y, info->map_size_x);
-	get_next_line(0, &str);
+	ft_strdel(&str);
+	get_next_line(0, &str) ? clearscreen() : 0;
 	ft_putstr_color_fd(str, 2);
-	while (y < info->map_size_y)
+	ft_strdel(&str);
+	while (++y < info->map_size_y)
 	{
 		i = 0;
 		x = 0;
@@ -108,6 +135,6 @@ void					grab_map(t_env *info, char *str)
 			i++;
 		while (x < info->map_size_x)
 			info->map[y][x++] = str[i++];
-		y++;
+		ft_strdel(&str);
 	}
 }

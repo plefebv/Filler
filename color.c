@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 12:12:30 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/26 12:36:44 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/26 13:39:30 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ void				ft_putstr_color_fd(char *str, int fd)
 
 void				clearscreen(void)
 {
-	write(2, "\e[1;1H\e[2J", 12);
+	ft_putstr_fd("\e[1;1H\e[2J", 2);
 }

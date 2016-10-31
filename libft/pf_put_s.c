@@ -6,13 +6,14 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/01 12:23:19 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/01 18:55:05 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/10/28 13:28:37 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 
-static void						pf_convert_ws_to_s(wchar_t ap, int i, t_info *info)
+static void						pf_convert_ws_to_s(wchar_t ap, \
+								int i, t_info *info)
 {
 	if (ap < 128)
 		info->lst->data[i] = ((ap >> 0) & 127) | 0;
