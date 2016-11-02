@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/03 16:27:10 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/31 14:13:56 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/11/02 12:33:06 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void					grab_map_size(t_env *info, char *str)
 	ft_memdel((void **)&tab[2]);
 	free(*tab);
 	free(tab);
-	info->first = 0;
 	info->step = 2;
 }
 

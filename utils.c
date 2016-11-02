@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/03 16:45:22 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/30 13:21:57 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/11/02 12:36:51 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,9 @@ void				take_global_position(t_env *info, t_pp *pp)
 static void			init_pp(t_env *info, t_pp *pp)
 {
 	info->free = 0;
-	pp->emax_y = 0;
 	pp->emin_y = info->map_size_y;
-	pp->emax_x = 0;
 	pp->emin_x = info->map_size_x;
-	pp->pmax_y = 0;
 	pp->pmin_y = info->map_size_y;
-	pp->pmax_x = 0;
 	pp->pmin_x = info->map_size_x;
 	pp->p_global = -1;
 	pp->e_global = -1;
@@ -74,16 +70,12 @@ void				take_position(t_env *info, t_pp *pp, int i, int x)
 		{
 			if (info->map[i][x] == info->ltr_player)
 			{
-				i > pp->pmax_y ? pp->pmax_y = i : 0;
 				i < pp->pmin_y ? pp->pmin_y = i : 0;
-				x > pp->pmax_x ? pp->pmax_x = x : 0;
 				x < pp->pmin_x ? pp->pmin_x = x : 0;
 			}
 			if (info->map[i][x] == info->ltr_ennemy)
 			{
-				i > pp->emax_y ? pp->emax_y = i : 0;
 				i < pp->emin_y ? pp->emin_y = i : 0;
-				x > pp->emax_x ? pp->emax_x = x : 0;
 				x < pp->emin_x ? pp->emin_x = x : 0;
 			}
 		}

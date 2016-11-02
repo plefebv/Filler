@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/01 19:34:36 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/28 16:30:34 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/11/02 12:36:50 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,14 @@ typedef struct			s_env
 	char				direction_y;
 
 	int					free;
-	int					first;
 }						t_env;
 
 typedef struct			s_pp
 {
-	int					emax_y;
 	int					emin_y;
-	int					emax_x;
 	int					emin_x;
 
-	int					pmax_y;
 	int					pmin_y;
-	int					pmax_x;
 	int					pmin_x;
 
 	int					p_global;

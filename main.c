@@ -6,7 +6,7 @@
 /*   By: plefebvr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/30 17:13:43 by plefebvr          #+#    #+#             */
-/*   Updated: 2016/10/31 14:11:12 by plefebvr         ###   ########.fr       */
+/*   Updated: 2016/11/02 12:32:45 by plefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ int						main(void)
 
 	str = NULL;
 	info.step = 0;
-	info.first = 1;
 	while (get_next_line(0, &str) > 0)
 		work_filler(&info, str);
 	return (0);
